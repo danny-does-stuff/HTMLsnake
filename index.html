@@ -1,21 +1,27 @@
 <!DOCTYPE html>
 <html>
 
-<style type="text/css">
-	#canvas {
-		border: 1px solid black;
-	}
-</style>
-
 <head>
 	<title>Snake</title>
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-	<script src="snake.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<!-- <script src="snake.js"></script> -->
+	<link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<div></div>
-<canvas id="canvas" width="900px" height="300px"></canvas>
-<div id="play-button">Let's Play</div>
+
+	<header class="navbar-fixed-top">
+        <div class="text-center">
+        	<h1>Snake</h1>
+    	</div>	
+    </header>
+
+	<canvas id="canvas"></canvas>
+
+	<div class="button-bar" role="group">
+	  <button type="button" class="btn btn-lg btn-custom">Let's Play!</button>
+	</div>
 
 </body>
 </html>

@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css?family=Josefin+Slab');
+
+body {
+	background: #303C74;
+	display: block;
+	margin: 100px 0px 0px 0px;
+	padding-top: 25px;
+	width: 100%;
+}
+
+header {
+	background: #07103A;
+	height: 100px;
+	/*color: #7B84AE;*/
+	color: #AA8939;
+	top: 0;
+	width: 100%;
+}
+
+h1 {
+	font-family: "Josefin Slab";
+	font-size: 70px;
+	font-weight: bold;
+}
+
+#canvas {
+	background: #FFFFFF;
+	border: 1px solid black;
+	height: 300px;
+	margin: 0px auto;
+	padding: 0px auto;
+	width: 900px;
+}
+
+.button-bar {
+	width: 100%;
+	margin: 25px auto;
+}
+
+.btn-custom {
+	background: #AA8939;
+	color: #FFE6AA;
+}
