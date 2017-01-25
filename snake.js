@@ -72,7 +72,11 @@ $(document).ready(function() {
 
 	function drawSnake() {
 		for (var i = 0; i < snake.length; i++) {
-			drawCell(snake[i], 'blue');
+			if (i == snake.length - 1) {
+				drawCell(snake[i], 'red');
+			} else {
+				drawCell(snake[i], 'blue');
+			}
 		}
 	}
 
@@ -106,10 +110,51 @@ $(document).ready(function() {
 			alert('something went horribly wrong');
 		}
 
-		snake[snake.length] = {x: nextHeadX, y: nextHeadY};
+		var nextHeadLocation = {x: nextHeadX, y: nextHeadY};
+		if (collision(nextHeadLocation)) {
+			endGame();
+		} else {
+			if (foundFood(nextHeadLocation)) {
+				score++;
+				getNewFood();
+			} else {
+				snake.splice(0, 1);
+			}
+			snake[snake.length] = nextHeadLocation;
 
-		snake.splice(0, 1);
-		paint();
+			paint();
+		}
+
+	}
+
+	/**
+	* Check if cell collides with the snake or any wall
+	*/
+	function collision(cell) {
+		if (cell.x < 0 || cell.x >= columnCount) {
+			return true;
+		}
+
+		if (cell.y < 0 || cell.y >= rowCount) {
+			return true;
+		}
+
+		for (var i = 0; i < snake.length - 1; i++) {
+			if (cell.x == snake[i].x && cell.y == snake[i].y) {
+				return true;
+			}
+		}
+
+		return false;
+	}
+
+	function foundFood(head) {
+		return head.x == food.x && head.y == food.y;
+	}
+
+	function endGame() {
+		clearInterval(gameLoop);
+		alert("Game Over. Final Score: " + score);
 	}
 
 	$(document).keydown(function(e) {
