@@ -11,7 +11,6 @@ body {
 header {
 	background: #07103A;
 	height: 100px;
-	/*color: #7B84AE;*/
 	color: #AA8939;
 	top: 0;
 	width: 100%;
@@ -26,10 +25,8 @@ h1 {
 #canvas {
 	background: #FFFFFF;
 	border: 1px solid black;
-	height: 300px;
 	margin: 0px auto;
 	padding: 0px auto;
-	width: 900px;
 }
 
 .button-bar {
@@ -38,6 +35,26 @@ h1 {
 }
 
 .btn-custom {
+	width: 240px;
+	margin: 5px;
+}
+
+.btn-custom-green {
+	background: #2C8437;
+	color: #84C68C;
+}
+
+.btn-custom-green:hover {
+	background: #105D2A;
+	color: #84C68C;
+}
+
+.btn-custom-orange {
 	background: #AA8939;
+	color: #FFE6AA;
+}
+
+.btn-custom-orange:hover {
+	background: #806015;
 	color: #FFE6AA;
 }
