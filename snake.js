@@ -28,8 +28,6 @@ $(document).ready(function() {
 		init();
 	});
 
-	init();
-
 	function init() {
 		clearInterval();
 		resetSnake(5);
