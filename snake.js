@@ -32,7 +32,7 @@ $(document).ready(function() {
 
 	function init() {
 		clearInterval();
-		createSnake(5);
+		resetSnake(5);
 		getNewFood();
 		paint();
 
@@ -43,7 +43,8 @@ $(document).ready(function() {
 		gameLoop = setInterval(moveSnake, 60);
 	}
 
-	function createSnake(length) {
+	function resetSnake(length) {
+		snake = [];
 		for (var i = 0; i < length; i++) {
 			snake[i] = {
 				x: i,
