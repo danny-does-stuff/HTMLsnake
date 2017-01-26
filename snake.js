@@ -191,7 +191,7 @@ $(document).ready(function() {
 		}
 	});
 
-	$(document).on('swipeleft', function(e) {
+	$canvas.on('swipeleft', function(e) {
 		alert('swiped left');
 	})
 });
