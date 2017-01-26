@@ -22,8 +22,31 @@ h1 {
 	font-weight: bold;
 }
 
-#content {
-	display: flex;
+h2 {
+	font-family: "Josefin Slab";
+	font-size: 50px;
+	font-weight: bold;
+	margin-top: 0px;
+	/*color: #AA8939;*/
+}
+
+#left-content {
+	padding-left: 16px;
+	font-family: "Josefin Slab";
+	display: inline-block;
+	width: 300px;
+	vertical-align: top;
+}
+
+#left-content ol {
+	font-family: "Josefin Slab";
+	color: #AA8939;
+	font-size: 20px;
+	font-weight: bold;
+}
+
+#right-content {
+	display: inline-flex;
 	flex-direction: column;
 	align-items: center;
 }
@@ -38,7 +61,6 @@ h1 {
 .button-bar {
 	width: 100%;
 	margin: 25px auto;
-	display: flex;
 	justify-content: center;
 }
 

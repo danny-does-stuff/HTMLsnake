@@ -159,23 +159,39 @@ $(document).ready(function() {
 
 	function endGame() {
 		clearInterval(gameLoop);
+		addScore(score);
 		alert("Game Over. Final Score: " + score);
 	}
 
-	$(document).keydown(function(e) {
-		switch(e.which) {
-			case 37:
-				direction = 'left';
-				break;
-			case 38:
-				direction = 'up';
-				break;
-			case 39:
-				direction = 'right';
-				break;
-			case 40:
-				direction = 'down';
-				break;
+	function addScore(scoreToAdd) {
+		var added = false;
+		$('#high-scores li').each(function(index, element) {
+
+			// if (index == 0 && scoreToAdd) {}
+			if (scoreToAdd > parseInt(element.textContent) && !added) {
+				$(element).before($('<li/>').text(score))
+				added = true;
+			}
+		});
+		if (!added) {
+			$('<li/>').text(score)
+			.appendTo($('#high-scores'))
 		}
+	}
+
+	$(document).keydown(function(e) {
+		if (e.which == 37 && direction != 'right') {
+			direction = 'left';
+		} else if (e.which == 38 && direction != 'down') {
+			direction = 'up';
+		} else if (e.which == 39 && direction != 'left') {
+			direction = 'right';
+		} else if (e.which == 40 && direction != 'up') {
+			direction = 'down';
+		}
+	});
+
+	$(document).swipeleft(function(e) {
+		alert('swiped left');
 	})
 });
