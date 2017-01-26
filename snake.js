@@ -26,25 +26,27 @@ $(document).ready(function() {
 	var score;
 
 	var gameLoop;
-
+	var gameSpeed;
 	// The snake, with the tail at index 0 and the head at index snake.length - 1
 	var snake = [];
+
+	var levelCounter;
 
 	$('#play-button').click(function() {
 		init();
 	});
 
 	function init() {
-		clearInterval();
 		resetSnake(5);
 		getNewFood();
 		paint();
 
 		score = 0;
 		direction = "right";
-
+		gameSpeed = 60;
 		clearInterval(gameLoop);
-		gameLoop = setInterval(moveSnake, 60);
+		gameLoop = setInterval(moveSnake, gameSpeed);
+		levelCounter = 1;
 	}
 
 	function resetSnake(length) {
@@ -68,7 +70,7 @@ $(document).ready(function() {
 		clearCanvas();
 		drawSnake();
 		drawFood();
-	}
+}
 
 	function clearCanvas() {
 		context.fillStyle = 'white';
@@ -120,7 +122,29 @@ $(document).ready(function() {
 			endGame();
 		} else {
 			if (foundFood(nextHeadLocation)) {
+
 				score++;
+
+				if (score == 5){
+					gameSpeed = 45;
+					changeLevel(2);
+					clearInterval(gameLoop);
+					gameLoop = setInterval(moveSnake, gameSpeed);
+				}
+				if (score == 10){
+					gameSpeed = 30;
+					changeLevel(3);
+					clearInterval(gameLoop);
+					gameLoop = setInterval(moveSnake, gameSpeed);
+				}
+				if(score == 15) {
+					gameSpeed = 5;
+					changeLevel(4);
+					clearInterval(gameLoop);
+					gameLoop = setInterval(moveSnake, gameSpeed);
+				}
+
+
 				getNewFood();
 			} else {
 				snake.splice(0, 1);
@@ -177,6 +201,11 @@ $(document).ready(function() {
 			$('<li/>').text(score)
 			.appendTo($('#high-scores'))
 		}
+	}
+
+	function changeLevel(level){
+		levelCounter = level;
+		$('#level').text("Level: " + levelCounter);
 	}
 
 	$(document).keydown(function(e) {

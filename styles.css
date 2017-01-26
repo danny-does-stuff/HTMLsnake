@@ -88,3 +88,14 @@ h2 {
 	background: #806015;
 	color: #FFE6AA;
 }
+
+#scoreBox{
+	font-size: 20px;
+	color: white;
+}
+
+#level{
+	display: inline-block;
+	float: right;
+	font-size: 30px;
+}
