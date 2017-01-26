@@ -6,6 +6,12 @@ script.type = 'text/javascript';
 document.getElementsByTagName('head')[0].appendChild(script);*/
 
 $(document).ready(function() {
+
+	// Sorry, this has to go here
+	$('#leaderboard-button').click(function() {
+		alert('To be implemented');
+	});
+
 	var $canvas = $('#canvas');
 	var context = $canvas[0].getContext('2d');
 	var width = $canvas.width();
