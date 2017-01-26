@@ -191,7 +191,7 @@ $(document).ready(function() {
 		}
 	});
 
-	$(document).swipeleft(function(e) {
+	$(document).on('swipeleft', function(e) {
 		alert('swiped left');
 	})
 });
