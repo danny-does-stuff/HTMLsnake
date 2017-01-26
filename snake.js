@@ -190,8 +190,4 @@ $(document).ready(function() {
 			direction = 'down';
 		}
 	});
-
-	$canvas.on('swipeleft', function(e) {
-		alert('swiped left');
-	})
 });
