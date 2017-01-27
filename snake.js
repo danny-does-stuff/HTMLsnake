@@ -46,7 +46,7 @@ $(document).ready(function() {
 		gameSpeed = 60;
 		clearInterval(gameLoop);
 		gameLoop = setInterval(moveSnake, gameSpeed);
-		levelCounter = 1;
+		changeLevel(1);
 	}
 
 	function resetSnake(length) {
